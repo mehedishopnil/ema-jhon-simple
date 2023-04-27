@@ -1,0 +1,14 @@
+.cart{
+    position: sticky;
+    top: 0;
+    background-color: #FFE0B3;
+    padding: 25px;
+    margin: 50px 10px 0px 0px;
+    border-radius: 10px;
+}
+.cart p{
+    font-size: 17px;
+}
+.cart h6{
+    font-size: 17px;
+}
