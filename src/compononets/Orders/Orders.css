@@ -1,0 +1,9 @@
+.shop-container {
+   display: grid;
+
+}
+
+.review-container{
+    display: grid;
+    justify-content: center;
+}

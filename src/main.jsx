@@ -11,6 +11,7 @@ import Home from './compononets/Layout/Home.jsx';
 import Orders from './compononets/Orders/Orders.jsx';
 import Inventory from './compononets/Inventory/Inventory.jsx';
 import Login from './compononets/Login/Login.jsx';
+import cartProductsLoader from './loders/cartProductsLoader.js';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
     },
     {
       path:'orders',
-      element:<Orders></Orders>
+      element:<Orders></Orders>,
+      loader: cartProductsLoader
     },
     {
       path:'inventory',
