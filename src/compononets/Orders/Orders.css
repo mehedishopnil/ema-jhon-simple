@@ -7,3 +7,20 @@
     display: grid;
     justify-content: center;
 }
+
+.checkout-btn{
+    text-decoration: none;
+}
+
+.checkout{
+    background-color: white;
+    color: rgb(71, 71, 71);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(175, 175, 175);
+}
+.checkout:hover{
+    background-color: #FF9900;
+    color: white;
+}

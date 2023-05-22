@@ -12,3 +12,25 @@
 .cart h6{
     font-size: 17px;
 }
+
+.cart-delete-btn{
+    background-color: white;
+    color: rgb(23, 23, 23);
+    border: 1px solid rgb(177, 177, 177);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-delete-btn:hover{
+    background-color: #FF3030;
+    color: white;
+}
+
+.cart-delete-icon{
+    padding-left: 10px;
+}
+
+.checkout{
+    margin-top: 10px;
+}
