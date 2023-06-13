@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -33,8 +34,9 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        <div>
+                        <div className='sign-in-btn'>
                             <button className='submit' type="submit">Login</button>
+                            <p className=''>New to Ema-jon? <Link  to = '/sign-up'>Create New Account</Link></p>
                         </div>
 
                         <div>

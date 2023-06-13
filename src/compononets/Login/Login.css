@@ -47,15 +47,24 @@
     border-radius: 5px;
 }
 
-.submit {
+.sign-in-btn button{
     color: #0E161A;
+    font-size: 22px;
     width: 415px;
     height: 55px;
+    border: none;
     background: rgba(255, 153, 0, 0.3);
     border-radius: 5px;
-    margin-bottom: 20px;
 }
 
+
+.login-btn{
+    margin-bottom: 40px;
+}
+.login-btn a{
+    text-decoration: none;
+    color: #FF9900;
+}
 .google-submit {
     display: flex;
     justify-content: center;
