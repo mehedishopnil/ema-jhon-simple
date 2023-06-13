@@ -91,3 +91,13 @@
     background-color: rgba(255, 153, 0, 0.2);
     border: none;
 }
+
+.login-error{
+    color: rgb(255, 21, 21);
+}
+
+.success-msg{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 246, 70);
+}
