@@ -1,0 +1,13 @@
+.sign-in-btn{
+    margin-bottom: 40px;
+}
+.sign-in-btn a{
+    text-decoration: none;
+    color: #FF9900;
+}
+
+.error{
+    color: red;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
