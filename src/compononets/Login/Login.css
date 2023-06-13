@@ -1,0 +1,77 @@
+.form-box {
+    font-family: poppins;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.form-container {
+
+    box-sizing: border-box;
+    width: 500px;
+    
+    padding: 42px;
+    margin-top: 80px;
+    background: #FFFFFF;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+}
+
+.Login-title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+
+    letter-spacing: 0.0025em;
+
+    color: #2A414F;
+
+}
+
+.input-filed {
+    margin-bottom: 30px;
+    width: 400px;
+    height: 55px;
+    color: #2c2c2c;
+    font-size: 20px;
+    font-weight: 500!important;
+    padding: 0px 10px;
+    background-color: transparent;
+    border: 1px solid #a4b9c7;
+    border-radius: 5px;
+}
+
+.submit {
+    color: #0E161A;
+    width: 415px;
+    height: 55px;
+    background: rgba(255, 153, 0, 0.3);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.google-submit {
+    display: flex;
+    justify-content: center;
+    color: #0E161A;
+    width: 415px;
+    height: 55px;
+    
+    background: transparent;
+    border: 1px solid #a4b9c7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.google-submit img {
+    width: 35px;
+    padding-right: 15px;
+}
+.google-btn-text{
+    padding-top: 8px;
+}
+
+.google-submit:hover{
+    background-color:rgba(255, 153, 0, 0.2);
+    border: none;
+}
