@@ -27,3 +27,14 @@ nav.header a:hover{
     color: rgb(253, 56, 132);
     font-size: 20px;
 }
+.sign-out{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    margin-left: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+}
+.sign-out:hover{
+    background-color:rgba(255, 153, 0);;
+}

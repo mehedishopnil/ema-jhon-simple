@@ -35,7 +35,7 @@
 }
 
 .input-filed {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: 400px;
     height: 55px;
     color: #2c2c2c;
@@ -100,4 +100,13 @@
     text-align: center;
     font-size: 18px;
     color: rgb(0, 246, 70);
+}
+
+.show-pass{
+    color: #2c2c2c;
+    border: none;
+    background-color: transparent;
+  margin-top: -50px;
+    margin-left: 300px;
+    padding-bottom: 40px;
 }
