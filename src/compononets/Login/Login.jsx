@@ -72,11 +72,13 @@ const Login = () => {
                                 name='password'
                                 required
                             />
+                            {/* Show or Hide password */}
                             <p className='show-pass' onClick={() => setShow(!show)}><small>
                                 {
                                     show? <span>Hide Password</span>: <span>Show Password</span>
                                 }
                                 </small></p>
+
                             <p className='login-error'>{error}</p>
                         </div>
                         <div className='sign-in-btn'>
