@@ -3,16 +3,31 @@ import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/cart';
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendarAlt, faProcedures, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
 
+    
+    // Done: 1. Determine the total number of items::
+    const {totalProducts} = useLoaderData()
+    console.log(totalProducts);
+
+    // 2.ToDo: Decide the number of items per page::
+    const itemsPerPage = 10;
+
+    // 3.Done: Total Pages::
+    const totalPages = Math.ceil(totalProducts / itemsPerPage);
+
+    // Page Numbers::
+    const pageNumbers = [...Array(totalPages).keys()]
+
+
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -24,7 +39,7 @@ const Shop = () => {
         for (const id in storedCart) {
 
             //step-2: get the product by using id
-            const addedProduct = products.find(product => product.id === id);
+            const addedProduct = products.find(product => product._id === id);
 
             //step-3: get the product quantity
 
@@ -45,7 +60,7 @@ const Shop = () => {
         console.log(product);
         const newCart = [...cart, product];
         setCart(newCart);
-        addToDb(product.id);
+        addToDb(product._id);
     }
 
     const handleClearCart = () => {
@@ -54,11 +69,12 @@ const Shop = () => {
     }
 
     return (
+        <>
         <div className='shop-container'>
             <div className="products-container">
                 {
                     products.map(product =>
-                        <Product key={product.id}
+                        <Product key={product._id}
                             product={product}
                             handleAddToCart={handleAddToCart}
                         >
@@ -80,6 +96,14 @@ const Shop = () => {
                 </Cart>
             </div>
         </div>
+
+        {/* Pagination */}
+        <div className='pagination'>
+                {
+                    pageNumbers.map(number => <button key={number}>{number}</button>)
+                }
+        </div>
+        </>
     );
 };
 
