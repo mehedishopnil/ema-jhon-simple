@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./Shop.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/cart";
@@ -18,10 +18,22 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetchProducts();
+  }, [currentPage, itemsPerPage]);
+
+  const fetchProducts = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const apiUrl = `http://localhost:5000/products?_start=${startIndex}&_limit=${itemsPerPage}`;
+
+    fetch(apiUrl)
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
   useEffect(() => {
     const storedCart = getShoppingCart();
@@ -40,23 +52,24 @@ const Shop = () => {
     setCart(saveCart);
   }, [products]);
 
-  // Pagination data
-  const totalProducts = products.length;
-  const totalPages = Math.ceil(totalProducts / itemsPerPage);
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-  // Handle Add to Cart
-  const handleAddToCart = (product) => {
+  // Define the handleAddToCart function
+const handleAddToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
     addToDb(product._id);
   };
 
-  // Handle Clear Cart
-  const handleClearCart = () => {
+  // Define the handleClearCart function
+const handleClearCart = () => {
     setCart([]);
     deleteShoppingCart();
   };
+  
+
+  // Pagination data
+  const totalProducts = products.length;
+  const totalPages = Math.ceil(totalProducts / itemsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   // Handle page change
   const handlePageChange = (page) => {
@@ -70,7 +83,6 @@ const Shop = () => {
 
   // Options for items per page select
   const options = [5, 10, 20];
-
 
   return (
     <>
