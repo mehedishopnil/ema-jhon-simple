@@ -30,6 +30,7 @@ nav.header a:hover{
 .sign-out{
     width: 100px;
     height: 40px;
+    color: white;
     font-size: 14px;
     margin-left: 10px;
     border: 1px solid white;
@@ -37,4 +38,15 @@ nav.header a:hover{
 }
 .sign-out:hover{
     background-color:rgba(255, 153, 0);;
+}
+
+.user{
+    border: 1.5px solid orange;
+    border-radius: 30px;
+    padding: 8px;
+}
+
+.login-btn{
+    margin-right: -25px;
+    
 }
