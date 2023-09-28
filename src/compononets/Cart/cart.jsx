@@ -1,10 +1,12 @@
-import React from 'react';
 import './cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt, faProcedures, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {  faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
+
+//
 const Cart = ({ cart, handleClearCart, children }) => {
-    // const {cart} = props;
+   // eslint-disable-next-line react/prop-types
+    
 
     let totalPrice = 0;
     let totalShipping = 0;
@@ -47,6 +49,7 @@ const Cart = ({ cart, handleClearCart, children }) => {
                 {children}
             </div>
         </div>
+        
 
     );
 };
